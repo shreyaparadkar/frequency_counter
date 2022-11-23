@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+## Description
+React application to display frequency distribution of words found at <https://www.terriblytinytales.com/test.txt>
+<hr/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Components
+<details>
+<summary>Index.js</summary>
 
-## Available Scripts
+- To create and render root
 
-In the project directory, you can run:
+</details>
+<details>
+<summary>App.js</summary>
 
-### `npm start`
+- Display home screen on initial render
+- Handle fetch call on button click
+- Update state to display chart screen after button click
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+</details>
+<details>
+<summary>Screens</summary>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Home Screen
+  - Display submit button
+- Chart Screen
+  - Display histogram based on frequency count of most occuring words
+  - For smaller screen, display graph vertically
+  - Check for smaller screens using custom hook (useWindowWidth)
 
-### `npm test`
+</details>
+<details>
+<summary>Components</summary>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Spinner
+  - Loading spinner for when data is being fetched
+- Chart
+  - Rechart component and its styling
+  - Responsive and interactive graph
 
-### `npm run build`
+</details>
+<details>
+<summary>Hooks</summary>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- useWindowWidth
+  - Custom hook that is triggered on window resize
+  - Returns if width of HTML is <720
+  - Used to update freqency graph direction, to vertical in mobile view and horizontal in bigger screens
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+</details>
+<details>
+<summary>Helpers</summary>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- CountFreq
+  - Clean the text, to remove all characters except alphanumeric values, @ and underscore
+  - Remove extra spaces
+  - Split the words based on single space, and convert to lowercase
+  - Create a freq map to count ourracnce of each word
+  - Sort the map based on values in descending order.
+  - Pass values to formatFreq
+- FormatFreq
+  - Format the results to pass data to chart
+  - Convert to array of objects, with each object having word and freq keys. 
 
-### `npm run eject`
+</details>
+<details>
+<summary>Styling</summary>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Tailwind CSS
+  - Created custom class components
+  - Extended theme for personalized styles
+- Animation
+  - Used CSS to animate background gradient
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+</details>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<hr/>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Libraries used
 
-## Learn More
+- React
+- Tailwind CSS
+- Recharts
+- Fetch API
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
