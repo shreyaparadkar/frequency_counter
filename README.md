@@ -1,6 +1,5 @@
 ## Description
 React application to display frequency distribution of words found at <https://www.terriblytinytales.com/test.txt>
-<hr/>
 
 ## Components
 <details>
@@ -72,8 +71,6 @@ React application to display frequency distribution of words found at <https://w
   - Used CSS to animate background gradient
 
 </details>
-
-<hr/>
 
 ## Libraries used
 
